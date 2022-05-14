@@ -1,10 +1,10 @@
-.mainContainer{
+/* .homeMainContainer{
 	position: relative;
 	display:grid;
 	justify-content: center;
 	text-align: center;
 	width:400px;
-	height:50%;
+	height:75%;
 	background-color: #ab4d49;
 	margin-top: 15%;
 	padding-bottom: 15px;
@@ -12,34 +12,83 @@
 	border: 0.4rem solid black;
 	border-radius: 25px;
 
+} */
+
+
+
+
+
+
+
+
+.homeMainContainer{
+	position: relative;
+	display:grid;
+	place-items: center;
+	background-color: #ab4d49;
+	margin-inline:auto;
+	text-align: center;
+	border: 0.4rem solid black;
+
+
+	width:max(200px,min(350px,70%));
+	border-radius: 25px;
 }
+
+#selectiondiv{
+	height: 100%;
+	width: 100%;
+}
+
+
 #char{
-	font-size: 4rem;
-	width:300px;
-	height:200px;
 	display: grid;
 	align-content: center;
-	margin-inline: auto;
+	box-sizing:border-box;
 	border: 0.25rem solid black;
 	background-color: #e3dcca;
+	margin-inline:auto;
 
+	font-size: 4em;
+
+
+	width:max(150px,min(280px,70%));
+	
+	height:200px;
 }
 
 .choices {
     border: 2px solid black;
-    height: 2em;
-    width:100%;
-    background-color: #ccaf9f;
+	background-color: #ccaf9f;
+	box-sizing:border-box;
+	display: flex-inline;
+	
+
+    height: 3em;
+	vertical-align:middle;
+	line-height: 0.55em;
+	font-size: 0.55em;
+    width:50%;
 }
 
 
 .formDiv{
+	/* display:grid;
+	grid-template-columns: 1fr 1fr; */
+	box-sizing:border-box;
+	display:flex;
+	flex-wrap: wrap;
+	margin-inline:auto;
 
-	display:grid;
-	width:300px;
-	margin-left: 0.125rem;
-	grid-template-columns: 1fr 1fr;
+	width:max(150px,min(280px,70%));
 }
+
+
+
+
+
+
+
 
 img{
 	position: absolute;
@@ -52,22 +101,31 @@ img{
 	width: auto;
 }
 
-button{
+
+
+
+
+
+
+
+#reset, #submit{
     display: inline-block;
     background-color: #ba753f;
+	color: #eeeeee;
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.2s;
+
     border-radius: 10px;
     border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
-    width: 100px;
-    transition: all 0.2s;
-    cursor: pointer;
+    width:max(70px,min(100px,25%));
+	font-size: 1em;
+	height: clamp(33px,48px,48px) ;
+	line-height: clamp(33px,48px,48px) ;
     margin: 5px;	
 }
 
-button:hover{
+#reset:hover, #submit:hover{
 	background-color:#9c7859;
     color: #eeeeee;
 	

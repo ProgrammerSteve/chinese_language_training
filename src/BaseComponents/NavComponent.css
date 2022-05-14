@@ -1,112 +1,65 @@
-@media all and (min-width: 551px){
-	.navpoints{
-		margin:0;
-		padding:0;
-		overflow: hidden;
-		background-color: maroon;
-		list-style-type: none;
-	}
 
-	li{
-		font-size: 20px;
-		padding:10px;	
-		background-color: maroon;
-		float:left;
-	}
+.navclass{
+	width:100%;
+	height: 100%;
+	
+}
+.navpoints{
+	margin:0;
+	padding:0;
+	overflow: hidden;
+	background-color: maroon;
+	list-style-type: none;
 
-	li a{
-		text-decoration: none;
-	}
 
-	li:hover{
-		background-color: grey;	
-	}
-
-	li:first-child{
-		margin-left: 50px;	
-	}
-
-	#navoption{
-	  display: block;
-	  color: white;
-	  text-align: center;
-	  padding: 14px 16px;
-	  text-decoration: none;
-	}
-
-	/*Anchor Tags*/
-	a{
-		text-decoration: none;
-		color:white;
-	}
-	a:visited{
-		text-decoration: none;
-		color:white;
-	}
-	a:active{
-		text-decoration: none;
-		color:white;
-	}
-	a:hover{
-		text-decoration: none;
-		color:white;	
-	}
+	display: flex;
+	justify-content: start;
 }
 
 
 
 
-@media all and (max-width: 550px){
-	.navpoints{
-		margin:0;
-		padding:0;
-		overflow: hidden;
-		background-color: maroon;
-		list-style-type: none;
-	}
 
-	li{
-		font-size: 16px;
-		padding:10px;	
-		background-color: maroon;
-		float:left;
-	}
 
-	li a{
-		text-decoration: none;
-	}
 
-	li:hover{
-		background-color: grey;	
-	}
+#navoption{
+	background-color: maroon;
+	color: white;
+	text-align: center;
+	padding: 12px 14px;
+	text-decoration: none;
+}
 
-	li:first-child{
-		margin-left: 15px;	
-	}
+#navoption a{
+	text-decoration: none;
+}
 
-	#navoption{
-	  display: block;
-	  color: white;
-	  text-align: center;
-	  padding: 14px 16px;
-	  text-decoration: none;
-	}
+#navoption:hover{
+	background-color: rgb(162, 97, 97);	
+}
 
-	/*Anchor Tags*/
-	a{
-		text-decoration: none;
-		color:white;
-	}
-	a:visited{
-		text-decoration: none;
-		color:white;
-	}
-	a:active{
-		text-decoration: none;
-		color:white;
-	}
-	a:hover{
-		text-decoration: none;
-		color:white;	
-	}
+#navoption:first-child{
+	margin-left: 0.5em;	
+}
+
+
+
+/*Anchor Tags*/
+a{
+	text-decoration: none;
+	color:white;
+	font-size: 0.8rem;
+	line-height: 12px;
+}
+a:visited{
+	text-decoration: none;
+	color:white;
+}
+a:active{
+	text-decoration: none;
+	color:white;
+}
+a:hover{
+	text-decoration: none;
+	color:white;	
 }

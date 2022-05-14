@@ -4,11 +4,6 @@ import {Characters} from "./Characters.js";
 
 let max=Object.keys(Characters).length;
 
-
-
-
-
-
 const handleSubmitForm=(e,state)=>{
 	e.preventDefault();
 	if(state.selected===state.answer){
@@ -76,12 +71,6 @@ const possibilitySet=[
 	[3,0,2,1]	
 ];
 
-
-
-
-
-
-
 const initialState={
 	correct:0,
 	total:0,
@@ -136,9 +125,6 @@ const reducer=(state,action)=>{
 };
 
 
-
-
-
 //onClick={() => dispatch({type: 'action', payload:''})}
 const Home=()=>{
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -146,8 +132,6 @@ const Home=()=>{
 	let nums =[num,null,null,null];
 	getInt(Characters, nums);
 	let set=possibilitySet[state.rand];
-	console.log(nums);
-
 
 	var inputElements = [];
 	for (var i = 0; i < 4; i++) {
@@ -166,38 +150,60 @@ const Home=()=>{
 				<label for="choices">{Characters[z].Pronounciation}</label> 
 			</div>
     	);
-
 	}
-	console.log(state);
 
 	return(
-		<div className ="mainContainer">
-			<h2>Correct: {state.correct}/{state.total}</h2>
+		<div className ="homeMainContainer">
 
 
-
-			{/*<img src="checkmark.png" alt="check"/>*/}
-
-
-
-
-			<div>
-				<div id="char"><p>{Characters[nums[0]].Character}</p></div>
-				<div>
-					<form onSubmit={(e)=>handleSubmitForm(e,state)?dispatch({type: 'correctAnswer'}):dispatch({type: 'wrongAnswer'})}>
-						<div className="formDiv">{inputElements}</div>
-						<div>
-							<button 
-							type="button" 
-							onClick={()=>dispatch({type: 'reset'})}
-							>
-								Reset
-							</button>							
-							<button >Submit</button>
+						
+						<div id="info">
+							<h3>Correct: {state.correct}/{state.total}</h3>
 						</div>
-					</form>
-				</div>
-			</div>
+						{/*<img src="checkmark.png" alt="check"/>*/}
+
+
+
+
+						<div id="selectiondiv">
+
+
+							<div id="char">
+								<p>{Characters[nums[0]].Character}</p>
+							</div>
+
+
+							<div>
+								<form onSubmit={(e)=>handleSubmitForm(e,state)?dispatch({type: 'correctAnswer'}):dispatch({type: 'wrongAnswer'})}>
+									
+									
+									<div className="formDiv">{inputElements}</div>
+
+
+									
+									<div id="buttoncontainerdiv">
+										<button 
+										type="button" 
+										id="reset"
+										onClick={()=>dispatch({type: 'reset'})}
+										>
+											Reset
+										</button>	
+
+
+										<button id="submit" >Submit</button>
+									</div>
+
+
+
+								</form>
+							</div>
+
+
+
+
+						</div>
+			
 		</div>
 	);
 }

@@ -1,6 +1,11 @@
 
 
-
+.footermasterdiv{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
 
 
 .footerdiv{
@@ -8,7 +13,7 @@
 	height: 100px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	background-color: #324E7B;
+	background-color: maroon;
 }
 
 .footerdiv2{
@@ -16,10 +21,10 @@
 	height: 15px;
 	display: grid;
 	justify-content: center;
-	background-color: #324E7B;
+	background-color: maroon;
 }
 
-.col1,.col2,.col3{
+.footercol1,.footercol2,.footercol3{
 	margin: 10% 0px;
 	display: grid;
 	justify-content: center;
@@ -28,7 +33,7 @@
 .footerword{
 	color: white;
 	margin:0px;
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 }
 
 .footerllc{
