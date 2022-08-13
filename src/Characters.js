@@ -18,7 +18,7 @@ export const Characters=[
 	Character:'不客气',
 	Tradiional:'',
 	Pronounciation:'bú kèqi ',
-	Meaning:'you’re welcome',
+	Meaning:"you’re welcome",
 	Category:'Expression'
 	},
 
@@ -47,7 +47,7 @@ export const Characters=[
 	Character:'没关系',
 	Tradiional:'',
 	Pronounciation:'méi guānxi',
-	Meaning:'it’s all right',
+	Meaning:"it’s all right",
 	Category:'Expression'
 	},
 	{
