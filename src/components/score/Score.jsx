@@ -6,7 +6,7 @@ const Score=()=>{
     const {score,total}=useContext(dataContext)
 
     return(
-        <div className="h-8 grid place-content-center w-80 mx-auto text-white text-xl">
+        <div className="h-8 grid place-content-center w-[16rem] sm:w-80 mx-auto text-white text-xl">
             <span>{`${score?score:'-'} / ${total?total:'-'}`}</span>
         </div>
     )
