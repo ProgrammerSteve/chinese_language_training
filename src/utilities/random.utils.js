@@ -66,3 +66,21 @@ export const getRand=(max)=>{
 //     }
 //     return [num,x1,x2,x3];
 // }
+
+// looks at the Pronounciation property of each object to ensure they're unique
+const getThreeOtherRandomStrings=(num, max, arr)=>{
+    let x1= 0 + Math.floor(Math.random() * (max- 0));
+    let x2= 0 + Math.floor(Math.random() * (max- 0));
+    let x3= 0 + Math.floor(Math.random() * (max- 0));
+
+    while(arr[num].Pronounciation===arr[x1].Pronounciation){
+        x1=0 + Math.floor(Math.random() * (max- 0))
+    }
+    while(arr[num].Pronounciation===arr[x2].Pronounciation || arr[x1].Pronounciation===arr[x2].Pronounciation){
+        x2=0 + Math.floor(Math.random() * (max- 0))
+    }
+    while(arr[num].Pronounciation===arr[x3].Pronounciation || arr[x1].Pronounciation===arr[x3].Pronounciation || arr[x2].Pronounciation===arr[x3].Pronounciation){
+        x3=0 + Math.floor(Math.random() * (max- 0))
+    }
+    return [num,x1,x2,x3];
+}
