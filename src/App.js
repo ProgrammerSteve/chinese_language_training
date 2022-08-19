@@ -1,5 +1,6 @@
 import './App.css';
 import MainComponent from "./components/maincomponent/MainComponent";
+import DefinitionComponent from './components/definitioncomponent/DefinitionComponent';
 import PronounciationComponent from './components/pronounciationcomponent/PronounciationComponent';
 import { getThreeOtherRandomNum, possibilitySet, getRand } from ".//utilities/random.utils";
 import { useEffect, useState, useRef, createContext} from "react";
@@ -17,6 +18,8 @@ const App=()=>{
   const [loading,setLoading]=useState(true)
   const [toggle,setToggle]=useState(true)
   const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
+
+  const [page,setPage]=useState('character');
 
   const pickSelection=(obj)=>setSelection(obj)
   const pickScore=(num)=>setScore(num)
@@ -68,7 +71,16 @@ const App=()=>{
       handleToggle
     };
 
+
+
+    //Add navigation bar
+    //Make a definition version
+    //make text for pronounciation fit the display screen
+    //swap out the random picker function
+    //enter traditional characters
+    //create toggle for traditional characters
   return(
+        
       <div className="h-screen w-screen grid place-content-center ">
           {/* {
               loading?<p>loading</p>:(
@@ -81,8 +93,18 @@ const App=()=>{
               )
           } */}
           <dataContext.Provider value={value}>
-              <MainComponent/>
-              {/* <PronounciationComponent/> */}
+            <div className='flex justify-around mb-3'>
+            <div className={`${page==='character'?'bg-blue-700 text-gray-100':'bg-blue-300 text-gray-600'} rounded-lg w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('character')}>Characters</div>
+            <div className={`${page==='pronounciation'?'bg-red-700 text-gray-100':'bg-red-300 text-gray-600'} rounded-lg w-32 text-center cursor-pointer select-none`} onClick={()=>setPage('pronounciation')}>Pronounciation</div>
+            <div className={`${page==='definition'?'bg-green-700 text-gray-100':'bg-green-300 text-gray-600'} rounded-lg w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('definition')}>Definition</div>
+            </div>
+           
+              {(page==="character")&& <MainComponent/>}
+              {(page==="pronounciation")&& <PronounciationComponent/>}
+              {(page==="definition")&& <DefinitionComponent/>}
+
+
+              
           </dataContext.Provider>
       </div>
   )
