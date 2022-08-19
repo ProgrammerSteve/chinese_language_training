@@ -1,5 +1,6 @@
 import './App.css';
 import MainComponent from "./components/maincomponent/MainComponent";
+import PronounciationComponent from './components/pronounciationcomponent/PronounciationComponent';
 import { getThreeOtherRandomNum, possibilitySet, getRand } from ".//utilities/random.utils";
 import { useEffect, useState, useRef, createContext} from "react";
 import React from 'react';
@@ -68,7 +69,7 @@ const App=()=>{
     };
 
   return(
-      <div className="h-screen w-screen grid place-content-center">
+      <div className="h-screen w-screen grid place-content-center ">
           {/* {
               loading?<p>loading</p>:(
               <>
@@ -81,6 +82,7 @@ const App=()=>{
           } */}
           <dataContext.Provider value={value}>
               <MainComponent/>
+              {/* <PronounciationComponent/> */}
           </dataContext.Provider>
       </div>
   )
