@@ -31,7 +31,7 @@ const Choice=({obj})=>{
             {!loading &&
                 <>
                 <span className="select-none my-auto"><p className='text-4xl'>{isSelected?`•`:`◦`}</p></span>
-                <span className="select-none my-auto"><p>{obj.Pronounciation}</p></span>
+                <span className="select-none my-auto text-xs sm:text-md"><p>{obj.Pronounciation}</p></span>
                 </>
             }
         </div>

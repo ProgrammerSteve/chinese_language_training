@@ -5,7 +5,7 @@ import Buttons from "../buttons/Buttons";
 
 const PronounciationComponent=()=>{
     return(
-        <div className="grid place-content-center gap-2 rounded-2xl bg-red-600 w-[18rem] sm:w-96 h-{100} shadow-xl">
+        <div className="mx-auto grid place-content-center gap-2 rounded-2xl bg-red-600 w-[18rem] sm:w-96 h-{100} shadow-xl">
             <Score/>
             <PronounciationDisplay/>
             <CharChoiceGrid/>

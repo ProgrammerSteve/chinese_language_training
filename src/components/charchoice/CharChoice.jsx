@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { dataContext } from '../../App';
 const CharChoice=({obj})=>{
-    const {loading,toggle, pickSelection, selection}=useContext(dataContext)
+    const {loading,toggle, pickSelection, selection, simplified}=useContext(dataContext)
     const [isSelected,setIsSelected]=useState(false)
     const handleSelection=()=>{
         if(isSelected){
@@ -32,7 +32,7 @@ const CharChoice=({obj})=>{
             {!loading &&
                 <>
                 <span className="select-none my-auto"><p className='text-4xl'>{isSelected?`•`:`◦`}</p></span>
-                <span className="select-none my-auto"><p>{obj.Character}</p></span>
+                <span className="select-none my-auto"><p>{simplified?obj.Character:obj.Traditional}</p></span>
                 </>
             }
         </div>

@@ -17,6 +17,9 @@ const App=()=>{
   const [choices, setChoices]=useState([]);
   const [loading,setLoading]=useState(true)
   const [toggle,setToggle]=useState(true)
+  const [simplified,setSimplified]=useState(true)
+
+
   const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
 
   const [page,setPage]=useState('character');
@@ -25,6 +28,7 @@ const App=()=>{
   const pickScore=(num)=>setScore(num)
   const pickTotal=(num)=>setTotal(num)
   const handleToggle=()=>setToggle(!toggle)
+  const handleSimplified=()=>setSimplified(!simplified)
 
   useEffect(()=>{
       if(!loading){
@@ -67,18 +71,24 @@ const App=()=>{
       total,
       loading,
       toggle,
+      simplified,
       pickSelection,
       pickScore,
       pickTotal,
-      handleToggle
+      handleToggle,
+      handleSimplified
     };
 
 
 
-    //Add navigation bar
-    //swap out the random picker function
-    //enter traditional characters
-    //create toggle for traditional characters
+   
+    //migrate project to a nextjs framework
+    //Add navigation bar for hsk1,2,3...
+    //create an auth page for signing in and out
+    //create a profile page to show what each person got right or wrong
+    //allow for scores to be reset
+    //add weighted random number function based on right and wrong answers
+
   return(
         
       <div className="h-screen w-screen grid place-content-center ">
@@ -93,15 +103,27 @@ const App=()=>{
               )
           } */}
           <dataContext.Provider value={value}>
+           
             <div className='flex justify-around mb-3'>
-            <div className={`${page==='character'?'bg-blue-700 text-gray-100':'bg-blue-300 text-gray-600'} rounded-lg w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('character')}>Characters</div>
-            <div className={`${page==='pronounciation'?'bg-red-700 text-gray-100':'bg-red-300 text-gray-600'} rounded-lg w-32 text-center cursor-pointer select-none`} onClick={()=>setPage('pronounciation')}>Pronounciation</div>
-            <div className={`${page==='definition'?'bg-green-700 text-gray-100':'bg-green-300 text-gray-600'} rounded-lg w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('definition')}>Definition</div>
+            <div className={`${page==='character'?'bg-blue-700 text-gray-100':'bg-blue-300 text-gray-600'} rounded-lg w-20 sm:w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('character')}>Characters</div>
+            <div className={`${page==='pronounciation'?'bg-red-700 text-gray-100':'bg-red-300 text-gray-600'} rounded-lg w-28 sm:w-32 text-center cursor-pointer select-none`} onClick={()=>setPage('pronounciation')}>Pronounciation</div>
+            <div className={`${page==='definition'?'bg-green-700 text-gray-100':'bg-green-300 text-gray-600'} rounded-lg w-20 sm:w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('definition')}>Definition</div>
             </div>
            
-              {(page==="character")&& <MainComponent/>}
-              {(page==="pronounciation")&& <PronounciationComponent/>}
-              {(page==="definition")&& <DefinitionComponent/>}
+            {(page==="character")&& <MainComponent/>}
+            {(page==="pronounciation")&& <PronounciationComponent/>}
+            {(page==="definition")&& <DefinitionComponent/>}
+
+            <div className='w-30 h-10 bg-gray-100 flex justify-around items-center rounded-lg mt-2'>
+              <div>Simplified</div>
+
+              <div onClick={handleSimplified} className={`w-1/4 h-8 rounded-lg bg-gray-200 flex ${simplified?"justify-start":"justify-end"}`}>
+                <div className="w-1/2 h-8 rounded-lg bg-gray-600 border-4 border-gray-400"/>
+              </div>
+
+              <div>Traditional</div>
+            </div>
+        
 
 
               
