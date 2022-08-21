@@ -2,7 +2,7 @@ import './App.css';
 import MainComponent from "./components/maincomponent/MainComponent";
 import DefinitionComponent from './components/definitioncomponent/DefinitionComponent';
 import PronounciationComponent from './components/pronounciationcomponent/PronounciationComponent';
-import { getThreeOtherRandomNum, possibilitySet, getRand } from ".//utilities/random.utils";
+import { getThreeOtherRandomNum,getThreeOtherRandomStrings, possibilitySet, getRand } from ".//utilities/random.utils";
 import { useEffect, useState, useRef, createContext} from "react";
 import React from 'react';
 
@@ -31,7 +31,8 @@ const App=()=>{
           let rand=getRand(characterArr.length)
           let arrangementRand=getRand(24)
           setCorrectObj(characterArr[rand])
-          let choiceSet=getThreeOtherRandomNum(rand,characterArr.length).map(num=>characterArr[num]);
+        //   let choiceSet=getThreeOtherRandomNum(rand,characterArr.length).map(num=>characterArr[num]);
+          let choiceSet=getThreeOtherRandomStrings(rand,characterArr.length,characterArr).map(num=>characterArr[num]);
           let arrangementSet=possibilitySet[arrangementRand];
           setChoices(arrangementSet.map(num=>choiceSet[num]))
       }
@@ -48,7 +49,8 @@ const App=()=>{
           setCharacterArr(data);
           setCorrectObj(data[rand])
           console.log({rand, correctObj})
-          let choiceSet=getThreeOtherRandomNum(rand,data.length).map(num=>data[num]);
+        //   let choiceSet=getThreeOtherRandomNum(rand,data.length).map(num=>data[num]);
+          let choiceSet=getThreeOtherRandomStrings(rand,data.length,data).map(num=>data[num]);
           let arrangementSet=possibilitySet[arrangementRand];
           setChoices(arrangementSet.map(num=>choiceSet[num]))
           setLoading(false)
@@ -74,8 +76,6 @@ const App=()=>{
 
 
     //Add navigation bar
-    //Make a definition version
-    //make text for pronounciation fit the display screen
     //swap out the random picker function
     //enter traditional characters
     //create toggle for traditional characters

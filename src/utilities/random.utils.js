@@ -68,7 +68,7 @@ export const getRand=(max)=>{
 // }
 
 // looks at the Pronounciation property of each object to ensure they're unique
-const getThreeOtherRandomStrings=(num, max, arr)=>{
+export const getThreeOtherRandomStrings=(num, max, arr)=>{
     let x1= 0 + Math.floor(Math.random() * (max- 0));
     let x2= 0 + Math.floor(Math.random() * (max- 0));
     let x3= 0 + Math.floor(Math.random() * (max- 0));
