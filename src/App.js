@@ -5,6 +5,7 @@ import PronounciationComponent from './components/pronounciationcomponent/Pronou
 import { getThreeOtherRandomNum,getThreeOtherRandomStrings, possibilitySet, getRand } from ".//utilities/random.utils";
 import { useEffect, useState, useRef, createContext} from "react";
 import React from 'react';
+import Navbar from './components/navbar/Navbar';
 
 export const dataContext =createContext();
 
@@ -103,6 +104,7 @@ const App=()=>{
               )
           } */}
           <dataContext.Provider value={value}>
+            
            
             <div className='flex justify-around mb-3'>
             <div className={`${page==='character'?'bg-blue-700 text-gray-100':'bg-blue-300 text-gray-600'} rounded-lg w-20 sm:w-24 text-center cursor-pointer select-none`} onClick={()=>setPage('character')}>Characters</div>
