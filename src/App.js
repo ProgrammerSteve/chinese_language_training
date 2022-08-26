@@ -20,8 +20,8 @@ const App=()=>{
   const [toggle,setToggle]=useState(true)
   const [simplified,setSimplified]=useState(true)
 
-
-  const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
+  // const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
+  const backendUrl=`https://kind-ruby-lobster.cyclic.app/`;
 
   const [page,setPage]=useState('character');
 
