@@ -1,10 +1,25 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { dataContext } from '../../App';
-const DefinitionChoice=({obj})=>{
-    const {loading,toggle, pickSelection, selection}=useContext(dataContext)
+import React, { useEffect, useState } from 'react';
+
+const DefinitionChoice=({obj, index, loading,toggle, pickSelection, selection})=>{
     const [isSelected,setIsSelected]=useState(false)
+    const [keypress,setKeyPress]=useState(0)
+    switch(index){
+        case 1:
+            setKeyPress(65);
+            break;
+        case 2:
+            setKeyPress(83);
+            break;
+        case 3:
+            setKeyPress(68);
+            break;
+        case 4:
+            setKeyPress(70);
+            break;
+        default: 
+            break;
+    }
+
     const handleSelection=()=>{
         if(isSelected){
             setIsSelected(false)
@@ -13,8 +28,16 @@ const DefinitionChoice=({obj})=>{
             pickSelection(obj)
         }
     }
+    const handleKeyDown = event => {
+        event.preventDefault();
+        if(event.keycode===`${keypress}`){
+          handleSelection();
+        }
+    };
+
+
     useEffect(()=>{
-        if(selection!=={} && !loading && selection?.Pronounciation==obj?.Pronounciation){
+        if(selection!=={} && !loading && selection?.Pronounciation===obj?.Pronounciation){
             setIsSelected(true)
         }else{
             setIsSelected(false)
@@ -27,7 +50,7 @@ const DefinitionChoice=({obj})=>{
     },[toggle])
 
     return(
-        <div onClick={handleSelection} className='bg-white w-[8rem] sm:w-36 h-12 flex justify-start gap-3 pl-1 col-span-1 mx-auto my-auto border-black border-2 rounded-xl cursor-pointer'>
+        <div onClick={handleSelection} onKeyDown={handleKeyDown} tabIndex={index} role="radio" aria-checked="false" className='bg-white w-[8rem] sm:w-36 h-12 flex justify-start gap-3 pl-1 col-span-1 mx-auto my-auto border-black border-2 rounded-xl cursor-pointer'>
             {!loading &&
                 <>
                 <span className="select-none my-auto"><p className='text-4xl'>{isSelected?`•`:`◦`}</p></span>

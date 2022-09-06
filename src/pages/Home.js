@@ -1,19 +1,13 @@
 // import React, {useReducer, useState, useEffect} from 'react';
 // import './Home.css';
-// import {Characters} from "../Characters.js";
-
-
-// let max=Object.keys(Characters).length;
 
 // const handleSubmitForm=(e,state)=>{
 // 	e.preventDefault();
 // 	if(state.selected===state.answer){
-// 		return true;	
+// 		return true;
 // 	}
 // 	else{return false;}
 // }
-
-
 
 // const getThreeOtherRandomNum=(num, max)=>{
 // 	let x1= 0 + Math.floor(Math.random() * (max- 0));
@@ -45,8 +39,6 @@
 // 	}
 // }
 
-
-
 // const initialState={
 // 	correct:0,
 // 	total:0,
@@ -69,37 +61,36 @@
 // 					total:state.total+1,
 // 					answer:Characters[psuedoRandChar(state.lcg)].Pronounciation,
 // 					selected:'',
-					
+
 // 				};
 // 		case 'wrongAnswer':
 // 			return {
 // 					...state,
 // 					lcg:prng(state.lcg),
 // 					num:psuedoRandChar(state.lcg),
-// 					rand:psuedoRandChoice(state.lcg),					
+// 					rand:psuedoRandChoice(state.lcg),
 // 					total:state.total+1,
 // 					answer:Characters[psuedoRandChar(state.lcg)].Pronounciation,
 // 					selected:'',
-// 				};				
+// 				};
 // 		case 'selection':
 // 			return {
 // 					...state,
 // 					selected:action.payload,
-// 				};	
+// 				};
 // 		case 'answer':
 // 			return {
 // 				...state,
 // 				answer:action.payload,
-// 			};	
+// 			};
 // 		case 'reset':
 // 			return{
 // 				...initialState,
-// 			};					
+// 			};
 // 		default:
 // 			return state;
 // 	}
 // };
-
 
 // const Home=()=>{
 // 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -114,15 +105,15 @@
 
 //     	inputElements.push(
 //     		<div className="choices">
-// 				<input 
-// 				type="radio" 
-// 				id={`choice-${i}`} 
-// 				name="radAnswer" 
-// 				value={Characters[z].Pronounciation}  
+// 				<input
+// 				type="radio"
+// 				id={`choice-${i}`}
+// 				name="radAnswer"
+// 				value={Characters[z].Pronounciation}
 // 				checked={state.selected===Characters[z].Pronounciation}
 // 				onChange={(e) => dispatch({type: 'selection', payload:e.currentTarget.value})}
-// 				/> 	
-// 				<label for="choices">{Characters[z].Pronounciation}</label> 
+// 				/>
+// 				<label for="choices">{Characters[z].Pronounciation}</label>
 // 			</div>
 //     	);
 // 	}
@@ -131,59 +122,41 @@
 // 		<>
 // 		<div className ="homeMainContainer">
 
-
-						
 // 						<div id="info">
 // 							<h3>Correct: {state.correct}/{state.total}</h3>
 // 						</div>
 // 						{/*<img src="checkmark.png" alt="check"/>*/}
 
-
-
-
 // 						<div id="selectiondiv">
-
 
 // 							<div id="char">
 // 								<p>{Characters[nums[0]].Character}</p>
 // 							</div>
 
-
 // 							<div>
 // 								<form onSubmit={(e)=>handleSubmitForm(e,state)?dispatch({type: 'correctAnswer'}):dispatch({type: 'wrongAnswer'})}>
-									
-									
+
 // 									<div className="formDiv">{inputElements}</div>
 
-
-									
 // 									<div id="buttoncontainerdiv">
-// 										<button 
-// 										type="button" 
+// 										<button
+// 										type="button"
 // 										id="reset"
 // 										onClick={()=>dispatch({type: 'reset'})}
 // 										>
 // 											Reset
-// 										</button>	
-
+// 										</button>
 
 // 										<button
-// 										 id="submit" 
+// 										 id="submit"
 // 										 >Submit</button>
 // 									</div>
-
-
 
 // 								</form>
 // 							</div>
 
-
-
-
 // 						</div>
-						
 
-			
 // 		</div>
 // 		</>
 // 	);
