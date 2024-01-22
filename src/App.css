@@ -1,5 +1,6 @@
 body{
   background-color: rgb(241, 241, 204);
+  /* background: radial-gradient(circle, #e5e2d9, #664f0a); */
   height:100%;
   width: 100%;
 }
