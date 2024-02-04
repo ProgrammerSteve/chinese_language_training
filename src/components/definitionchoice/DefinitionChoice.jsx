@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useEffect,useState,useContext } from 'react';
 import { dataContext } from '../../App';
 const DefinitionChoice=({obj})=>{
     const {loading,toggle, pickSelection, selection}=useContext(dataContext)
@@ -14,7 +12,7 @@ const DefinitionChoice=({obj})=>{
         }
     }
     useEffect(()=>{
-        if(selection!=={} && !loading && selection?.Pronounciation==obj?.Pronounciation){
+        if( !loading && selection?.Pronounciation==obj?.Pronounciation){
             setIsSelected(true)
         }else{
             setIsSelected(false)

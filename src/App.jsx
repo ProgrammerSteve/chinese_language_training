@@ -2,7 +2,7 @@ import './App.css';
 import MainComponent from "./components/maincomponent/MainComponent";
 import DefinitionComponent from './components/definitioncomponent/DefinitionComponent';
 import PronounciationComponent from './components/pronounciationcomponent/PronounciationComponent';
-import { getThreeOtherRandomNum,getThreeOtherRandomStrings, possibilitySet, getRand } from ".//utilities/random.utils";
+import { getThreeOtherRandomNum,getThreeOtherRandomStrings, possibilitySet, getRand } from "./utilities/random.utils";
 import { useEffect, useState, useRef, createContext} from "react";
 import React from 'react';
 import Navbar from './components/navbar/Navbar';
