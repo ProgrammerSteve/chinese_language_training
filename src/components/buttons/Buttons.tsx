@@ -1,13 +1,18 @@
-import { useContext } from 'react';
-import { dataContext } from '../../App';
+import React from 'react';
+import { useChoiceContext } from '../../context/ChoiceContext';
 
 const Buttons=()=>{
-    const {pickScore,pickTotal,score,total,correctObj,selection,handleToggle}=useContext(dataContext)
+    const {pickScore,pickTotal,score,total,correctObj,selection,handleToggle}=useChoiceContext()
 
     const handleSubmit=()=>{
-        if(!('Character' in selection)){
+        if(!(selection)){
             return
-        }else{
+        }
+        if(!correctObj){
+            return
+        }
+        
+        else{
             pickTotal(total+1);
             if(correctObj.Character==selection.Character){
                 pickScore(score+1);

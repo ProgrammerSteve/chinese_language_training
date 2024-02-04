@@ -1,12 +1,18 @@
-import { useEffect,useState,useContext } from 'react';
-import { dataContext } from '../../App';
-const CharChoice=({obj})=>{
-    const {loading,toggle, pickSelection, selection, simplified}=useContext(dataContext)
+import { useEffect,useState } from 'react';
+import React from 'react';
+import { useChoiceContext } from '../../context/ChoiceContext';
+import type { ChoiceData } from '../../context/ChoiceContext';
+
+interface IProps{
+    obj:ChoiceData;
+}
+const Choice=({obj}:IProps)=>{
+    const {loading,toggle, pickSelection, selection}=useChoiceContext()
     const [isSelected,setIsSelected]=useState(false)
     const handleSelection=()=>{
         if(isSelected){
             setIsSelected(false)
-            pickSelection({})
+            pickSelection(null)
         }else{
             pickSelection(obj)
         }
@@ -18,11 +24,10 @@ const CharChoice=({obj})=>{
             setIsSelected(false)
         }
     },[selection])
-    
 
     useEffect(()=>{
         setIsSelected(false)
-        pickSelection({})
+        pickSelection(null)
     },[toggle])
 
     return(
@@ -30,10 +35,10 @@ const CharChoice=({obj})=>{
             {!loading &&
                 <>
                 <span className="select-none my-auto"><p className='text-4xl'>{isSelected?`•`:`◦`}</p></span>
-                <span className="select-none my-auto"><p>{simplified?obj.Character:obj.Traditional}</p></span>
+                <span className="select-none my-auto text-xs sm:text-md"><p>{obj.Pronounciation}</p></span>
                 </>
             }
         </div>
     )
 }
-export default CharChoice;
+export default Choice;

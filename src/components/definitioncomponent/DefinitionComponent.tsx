@@ -1,17 +1,18 @@
+import React from "react";
 import Score from "../score/Score";
 import CharDisplay from "../chardisplay/CharDisplay";
-import ChoiceGrid from "../choicegrid/ChoiceGrid";
 import Buttons from "../buttons/Buttons";
+import DefinitionChoiceGrid from "../definitionchoicegrid/DefinitionChoiceGrid";
 
-const MainComponent=()=>{
+const DefinitionComponent=()=>{
     return(
         <div className="mx-auto grid place-content-center gap-2 rounded-2xl bg-red-600 w-[18rem] sm:w-96 h-{100} shadow-xl">
             <Score/>
             <CharDisplay/>
-            <ChoiceGrid/>
+            <DefinitionChoiceGrid/>
             <Buttons/>
         </div>
     )
 }
-export default MainComponent;
+export default DefinitionComponent;
 

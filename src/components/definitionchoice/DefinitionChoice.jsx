@@ -1,7 +1,8 @@
-import { useEffect,useState,useContext } from 'react';
-import { dataContext } from '../../App';
+import { useEffect,useState } from 'react';
+import React from 'react';
+import { useChoiceContext } from '../../context/ChoiceContext';
 const DefinitionChoice=({obj})=>{
-    const {loading,toggle, pickSelection, selection}=useContext(dataContext)
+    const {loading,toggle, pickSelection, selection}=useChoiceContext()
     const [isSelected,setIsSelected]=useState(false)
     const handleSelection=()=>{
         if(isSelected){

@@ -1,3 +1,4 @@
+import React from "react";
 import Score from "../score/Score";
 import PronounciationDisplay from "../pronounciationdisplay/PronounciationDisplay";
 import CharChoiceGrid from "../charchoicegrid/CharChoiceGrid";
