@@ -1,8 +1,7 @@
 body{
   background-color: rgb(241, 241, 204);
   /* background: radial-gradient(circle, #e5e2d9, #664f0a); */
-  height:100%;
-  width: 100%;
+
 }
 
 .middlediv{
@@ -13,3 +12,76 @@ body{
   justify-content: space-between;
 }
 
+
+
+
+.page-height{
+  height: calc(100vh - 70px);
+  height: calc(100svh - 70px);
+}
+
+.sidebar-height{
+  height: 100vh;
+  height: 100svh;
+}
+
+
+.div-container {
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.top-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  
+  background-color: white;
+  top: 0px;
+}
+.mid-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  
+  background-color: white;
+  top: 13px;
+}
+.bottom-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  
+  background-color: white;
+  bottom: 0px;
+}
+.bar-open-top {
+  transform: translate(0px, 13px) rotate(45deg);
+  transform-origin:center;
+}
+.bar-open-bottom {
+  transform: translate(0px, -13px) rotate(-45deg);
+  transform-origin:center;
+}
+.bar-open-middle {
+  transform: scale(0);
+}
+
+.side-bar-animation{
+
+  transform: translateX(150px); /* Initial position, assuming the sidebar is 150px wide */
+  background: rgb(55, 65, 81); /* Initial color */
+  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.side-bar-animation.active {
+  transform: translateX(0); /* Slide in when active */
+  background: rgb(31, 41, 55); /* Final color */
+}
