@@ -19,6 +19,7 @@ const App=()=>{
   return(
         
     <>
+          <div id="image-div" className="fixed top-0 left-0 w-screen h-screen -z-10"></div>
           <ChoiceContextProvider>
           <Navbar page={page} handleSelection={handleSelection} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
           <div className="page-height pt-4 flex  flex-col place-content-center">

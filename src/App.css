@@ -1,8 +1,9 @@
-body{
-  background-color: rgb(241, 241, 204);
-  /* background: radial-gradient(circle, #e5e2d9, #664f0a); */
-
+:root {
+  --translate-value: 23%;
+  --scale-value: 1.5;
 }
+
+
 
 .middlediv{
   height:100%;
@@ -13,7 +14,31 @@ body{
 }
 
 
-
+#image-div{
+  background-image: url('/charListWebp.webp'); /* Adjust the path as necessary */
+  background-size: cover;
+  filter: sepia(100%); 
+  /* transform: scale(0.5); */
+  opacity: 0.1;
+  animation: slide 240s linear infinite;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(calc(var(--translate-value) * -1)) translateY(calc(var(--translate-value) * -1)) scale(var(--scale-value));
+  }
+  25% {
+    transform: translateX(var(--translate-value)) translateY(calc(var(--translate-value) * -1)) scale(var(--scale-value));
+  }
+  50% {
+    transform: translateX(var(--translate-value)) translateY(var(--translate-value)) scale(var(--scale-value));
+  }
+  75% {
+    transform: translateX(calc(var(--translate-value) * -1)) translateY(var(--translate-value)) scale(var(--scale-value));
+  }
+  100% {
+    transform: translateX(calc(var(--translate-value) * -1)) translateY(calc(var(--translate-value) * -1)) scale(var(--scale-value));
+  }
+}
 
 .page-height{
   height: calc(100vh - 70px);
