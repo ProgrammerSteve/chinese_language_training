@@ -1,14 +1,14 @@
 import React from 'react';
 import CharSimplifiedSetting from '../charSimplifiedSetting/CharSimplifiedSetting';
 import PageSelector from '../pageSelector/PageSelector';
-import PageTabs from '../pageTabs/PageTabs';
+// import PageTabs from '../pageTabs/PageTabs';
 import { useChoiceContext } from '../../context/ChoiceContext';
 
 const ScreenSetup=()=>{
     const {page}=useChoiceContext()
     return(
         <>
-        <PageTabs/>
+        {/* <PageTabs/> */}
         <PageSelector page={page}/>
         <CharSimplifiedSetting/>
         </>

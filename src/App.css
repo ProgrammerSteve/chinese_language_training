@@ -100,7 +100,7 @@
 .side-bar-animation{
 
   transform: translateX(150px); /* Initial position, assuming the sidebar is 150px wide */
-  background: rgb(55, 65, 81); /* Initial color */
+  background: rgb(113, 51, 67);  /* Initial color */
   transition: transform 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -108,5 +108,7 @@
 
 .side-bar-animation.active {
   transform: translateX(0); /* Slide in when active */
-  background: rgb(31, 41, 55); /* Final color */
+  
+  background: rgb(81, 43, 53);/* Final color */
 }
+

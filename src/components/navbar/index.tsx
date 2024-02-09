@@ -3,8 +3,6 @@ import React,{ FC } from "react"
 import HamburgerMenu from "./menu";
 // import { demoList } from "../../App";
 interface NavbarProps {
-page:string;
-handleSelection:(page:string)=>void;
 toggleSidebar:()=>void;
 isOpen:boolean;
 }
