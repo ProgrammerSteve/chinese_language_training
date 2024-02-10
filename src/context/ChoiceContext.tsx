@@ -49,6 +49,8 @@ interface ChoiceContextValue {
     pickTotal:(num:number)=>void;
     handleToggle:()=>void;
     handleSimplified:()=>void;
+    handleSetToSimplified:()=>void;
+    handleSetToTraditional:()=>void;
     handleSetPage:(page:string)=>void;
 }
 
@@ -68,8 +70,9 @@ export const ChoiceContext = createContext<ChoiceContextValue>({
     pickTotal:()=>null,
     handleToggle:()=>null,
     handleSimplified:()=>null,
+    handleSetToSimplified:()=>null,
+    handleSetToTraditional:()=>null,
     handleSetPage:()=>null
-
   });
   
   export function ChoiceContextProvider(props: IProps) {
@@ -89,6 +92,8 @@ export const ChoiceContext = createContext<ChoiceContextValue>({
     const pickTotal=(num:number)=>setTotal(num)
     const handleToggle=()=>setToggle(!toggle)
     const handleSimplified=()=>setSimplified(!simplified)
+    const handleSetToSimplified=()=>setSimplified(true)
+    const handleSetToTraditional=()=>setSimplified(false)
     const handleSetPage=(page:string)=>setPage(page)
         
     
@@ -134,6 +139,8 @@ export const ChoiceContext = createContext<ChoiceContextValue>({
         pickTotal,
         handleToggle,
         handleSimplified,
+        handleSetToSimplified,
+        handleSetToTraditional,
         handleSetPage
       };
     return (
