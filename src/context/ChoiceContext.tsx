@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import { getRand,getThreeOtherRandomStrings,possibilitySet } from "../utilities/random.utils";
-    // const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
-    // const backendUrl=`https://kind-ruby-lobster.cyclic.app/`;
+import { Characters } from "../Characters";
+
+
+
+
+
+
+// const backendUrl=`https://mandarin-hsk1-backend.herokuapp.com/`;
+// const backendUrl=`https://kind-ruby-lobster.cyclic.app/`;
 
 /* Example of ChoiceData
 {
@@ -24,10 +31,13 @@ export type ChoiceData={
 }
 
 function getData():Promise<ChoiceData[]>{
-    return fetch('https://kind-ruby-lobster.cyclic.app/')
-    .then(res => res.json())
-    .then(res => {
-      return res as ChoiceData[]
+    // return fetch('https://kind-ruby-lobster.cyclic.app/')
+    // .then(res => res.json())
+    // .then(res => {
+    //   return res as ChoiceData[]
+    // })
+    return new Promise<any>((resolve,reject)=>{
+      resolve(Characters as ChoiceData[])
     })
 }
 
