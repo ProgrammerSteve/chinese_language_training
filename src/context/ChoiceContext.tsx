@@ -36,7 +36,7 @@ function getData():Promise<ChoiceData[]>{
     // .then(res => {
     //   return res as ChoiceData[]
     // })
-    return new Promise<any>((resolve,reject)=>{
+    return new Promise<any>((resolve)=>{
       resolve(Characters as ChoiceData[])
     })
 }
